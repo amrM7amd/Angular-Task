@@ -1,0 +1,81 @@
+
+<div [ngSwitch]="currentChart">
+
+<ngx-charts-bar-vertical
+  *ngSwitchCase="'bar-vertical'"
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="data"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  (select)="onSelect($event)">
+</ngx-charts-bar-vertical>
+
+<ngx-charts-bar-horizontal
+  *ngSwitchCase="'bar-horizontal'"
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="data"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  (select)="onSelect($event)">
+</ngx-charts-bar-horizontal>
+
+<ngx-charts-pie-chart
+  *ngSwitchCase="'pie-chart'"
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="data"
+  [legend]="showLegend"
+  [explodeSlices]="explodeSlices"
+  [labels]="showLabels"
+  [doughnut]="doughnut"
+  [gradient]="gradient"
+  (select)="onSelect($event)">
+</ngx-charts-pie-chart>
+
+<ngx-charts-advanced-pie-chart
+  *ngSwitchCase="'advanced-pie-chart'"
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="data"
+  [gradient]="gradient"
+  (select)="onSelect($event)">
+</ngx-charts-advanced-pie-chart>
+
+<ngx-charts-pie-grid
+  *ngSwitchCase="'pie-grid'"
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="data"
+  (select)="onSelect($event)">
+</ngx-charts-pie-grid>
+
+<ngx-charts-gauge
+  *ngSwitchCase="'gauge'"
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="data"
+  [min]="0"
+  [max]="100"
+  [angleSpan]="240"
+  [startAngle]="-120"
+  [units]="'alerts'"
+  [bigSegments]="10"
+  [smallSegments]="5"
+  (select)="onSelect($event)">
+</ngx-charts-gauge> 
+
+</div>

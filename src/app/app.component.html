@@ -1,0 +1,35 @@
+<h1>Welcome to AppComponent</h1>
+
+<!--this bootstrap drobdown button-->
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" 
+    type="button" 
+    id="dropdownMenuButton"
+    data-toggle="dropdown" 
+    aria-haspopup="true" 
+    aria-expanded="false">
+      {{ selection }}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" role="menu">
+      <a class="dropdown-item" 
+      href="#"
+      *ngFor="let chart of chartTypes"
+      (click)="select(chart)">{{ chart.type }}</a>
+    </div>
+  </div>
+<!--end-->
+
+<app-charts [currentChart]="selection" [data]="single"></app-charts>
+<!-- <hr>
+<router-outlet></router-outlet> -->
+
+<div class="container">
+    <app-charts [currentChart]="'bar-vertical'" [data]="single" [name]="colorSet"></app-charts>
+    <app-charts [currentChart]="'bar-horizontal'" [data]="single" [name]="colorSet"></app-charts>
+    <app-charts [currentChart]="'pie-chart'" [data]="single" [name]="colorSet"></app-charts>
+    <app-charts [currentChart]="'advanced-pie-chart'" [data]="single" [name]="colorSet"></app-charts>
+    <app-charts [currentChart]="'pie-grid'" [data]="single" [name]="colorSet"></app-charts>
+    <app-charts [currentChart]="'gauge'" [data]="single" [name]="colorSet"></app-charts>
+</div>
+
+<!-- <app-todos></app-todos> -->
